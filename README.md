@@ -3,6 +3,9 @@
 # Activity 1
 ![activity1](Activity1_sceenshot.png)
 
+# Activity 2
+![activity2](Activity2_merge.png)
+
 # Activity 3
 ![activity3](Activity3_merge_conflict_resolved.png)
 
