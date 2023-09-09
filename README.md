@@ -11,6 +11,8 @@
 
 # Activity 4
 ![activity4](Activity4_UnitTesting.png)
+![activity4](Activity4_1.png)
+![activity4](Activity4_2.png)
 
 # Activity 5
 ![activity5](Activity5_1.png) 
