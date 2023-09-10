@@ -20,7 +20,7 @@ class util_tests(unittest.TestCase):
         self.assertEqual(utils.formatter("25"),('0b11001','0o31'))
         self.assertEqual(utils.formatter(25.0),('0b11001','0o31'))
         self.assertFalse(utils.formatter("hello"))
-        self.assertEqual(utils.formatter(0.52),('0b11001','0o31'))
+        self.assertEqual(utils.formatter(25.0),('0b11001','0o31'))
 
 if __name__ == "__main__":
     unittest.main()

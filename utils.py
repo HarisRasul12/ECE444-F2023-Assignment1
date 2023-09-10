@@ -10,10 +10,8 @@ class utils:
         '''
         #regular integer - assuming its an integer, it can be negative
         
-        #Making assumption strings of integers can still work any other type fail 
-        try:
-            number = int(number)
-        except:
+        #Making assumption only an integer can be passed only based on description in assignmnet how it says passes number (int)!!!!
+        if not isinstance(number, int):
             return False    
         
         if (number > 0):    
@@ -34,10 +32,9 @@ class utils:
             - binary and octal number 
             '''
             #regular integer - assuming its an integer, it can be negative
-            #Making assumption strings of integers can still work any other type fail
-            try:
-                number = int(number)
-            except:
-                return False  
+            # Making assumption only an integer can be passed only based on description in assignmnet how it says passes number (int)!!!!
+            if not isinstance(number, int):
+                return False 
+            
             return bin(number), oct(number)
             
