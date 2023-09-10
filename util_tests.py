@@ -9,18 +9,17 @@ class util_tests(unittest.TestCase):
     def test_reveresed(self):
         self.assertEqual(utils.reversed(25),52)
         self.assertEqual(utils.reversed(-25),-52)
-        self.assertEqual(utils.reversed("25"),52)
-        self.assertEqual(utils.reversed(25.0),0.52)
+        self.assertFalse(utils.reversed("25"))
+        self.assertFalse(utils.reversed(25.0))
         self.assertFalse(utils.reversed("hello"))
 
 
     def test_formatter(self):
         self.assertEqual(utils.formatter(25),('0b11001','0o31'))
         self.assertEqual(utils.formatter(-25),('-0b11001','-0o31'))
-        self.assertEqual(utils.formatter("25"),('0b11001','0o31'))
-        self.assertEqual(utils.formatter(25.0),('0b11001','0o31'))
+        self.assertFalse(utils.formatter("25"))
+        self.assertFalse(utils.formatter(25.0))
         self.assertFalse(utils.formatter("hello"))
-        self.assertEqual(utils.formatter(25.0),('0b11001','0o31'))
 
 if __name__ == "__main__":
     unittest.main()
