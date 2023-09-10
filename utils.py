@@ -1,7 +1,7 @@
 #forgot to commit seperately first time, 2nd time around did
 class utils:
 
-    def reversed(number: int):
+    def reversed(number):
         '''
         Inputs: 
         - number: assume integer
@@ -9,8 +9,14 @@ class utils:
         - reversed number, can take negative number
         '''
         #regular integer - assuming its an integer, it can be negative
-        if (number > 0):
-            
+        
+        #Making assumption strings of integers can still work any other type fail 
+        try:
+            number = int(number)
+        except:
+            return False    
+        
+        if (number > 0):    
             editing_number = str(number)
             editing_number = editing_number[::-1]
 
@@ -20,7 +26,7 @@ class utils:
         
         return int(editing_number)
 
-    def formatter(number: int):
+    def formatter(number):
             '''
             Inputs: 
             -number: assume integer
@@ -28,5 +34,10 @@ class utils:
             - binary and octal number 
             '''
             #regular integer - assuming its an integer, it can be negative
+            #Making assumption strings of integers can still work any other type fail
+            try:
+                number = int(number)
+            except:
+                return False  
             return bin(number), oct(number)
             

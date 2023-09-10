@@ -1,50 +1,26 @@
 #forgot to commit seperately first time, 2nd time around did
+#Following unit test format form the following website - in the past I did my own unittest, but now following this methodology:
+############Unit test format Source: https://geekflare.com/unit-testing-with-python-unittest/########
 from utils import *
-
-def util_tests():
-    
-    number = 25
-    
-    result = utils.reversed(number)
-    assert result == 52, f"Expected 52 but got {result}"
-    print("T1 reverse: Integer Test Pass")
-    
-    result = utils.reversed(-number)
-    assert result == -52, f"Expected -52 but got {result}"
-    print("T2 reverse: Negative Integer Test Pass")
-    
-    try:
-        result = utils.reversed(float(number))
-    except:
-        print("T3 reverse: Float Test Failed:cannot work with float requires type int")
-
-    try:
-        result = utils.reversed(str(number))
-    except:
-        print("T4 revese: Str Test Failed:cannot work with str requires type int")
+import unittest
 
 
-    #formatter
+class util_tests(unittest.TestCase):
+    def test_reveresed(self):
+        self.assertEqual(utils.reversed(25),52)
+        self.assertEqual(utils.reversed(-25),-52)
+        self.assertEqual(utils.reversed("25"),52)
+        self.assertEqual(utils.reversed(25.0),0.52)
+        self.assertFalse(utils.reversed("hello"))
 
-    result1, result2 = utils.formatter(number)
-    assert ((result1 == '0b11001') and (result2 == '0o31')),"fomatter test case 1 failed"
-    print("T5 fomatter: Integer Test Pass")
-    
-    result1,result2 = utils.formatter(-number)
-    assert ((result1 == '-0b11001') and (result2 == '-0o31')),"fomatter test case 2 failed"
-    print("T6 formatter: Negative Integer Test Pass")
-    
-    try:
-        result = utils.formatter(float(number))
-    except:
-        print("T7 formatter: Float Test Failed:cannot work with float requires type int")
 
-    try:
-        result = utils.formatter(str(number))
-    except:
-        print("T8 formatter: Str Test Failed:cannot work with str requires type int")
-
+    def test_formatter(self):
+        self.assertEqual(utils.formatter(25),('0b11001','0o31'))
+        self.assertEqual(utils.formatter(-25),('-0b11001','-0o31'))
+        self.assertEqual(utils.formatter("25"),('0b11001','0o31'))
+        self.assertEqual(utils.formatter(25.0),('0b11001','0o31'))
+        self.assertFalse(utils.formatter("hello"))
+        self.assertEqual(utils.formatter(0.52),('0b11001','0o31'))
 
 if __name__ == "__main__":
-    util_tests()
-    print("Test Cases Complete")
+    unittest.main()
